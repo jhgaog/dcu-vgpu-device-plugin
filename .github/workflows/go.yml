@@ -40,6 +40,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_TOKEN }}
           password: ${{ secrets.DOCKERHUB_PASSWD }}
 
-    - run: docker build . -t projecthami/dcu-vgpu-device-plugin:${BRANCH_NAME}
-    - run: docker push projecthami/dcu-vgpu-device-plugin:${BRANCH_NAME}
+    - run: docker build . -t jhgaodocker/dcu-vgpu-device-plugin:${BRANCH_NAME}
+    - run: docker push jhgaodocker/dcu-vgpu-device-plugin:${BRANCH_NAME}
       
