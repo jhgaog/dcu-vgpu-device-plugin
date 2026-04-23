@@ -565,6 +565,10 @@ func (p *Plugin) Allocate(ctx context.Context, reqs *kubeletdevicepluginv1beta1.
 		ContainerPath: "/opt/hyhal",
 		HostPath:      "/opt/hyhal",
 		ReadOnly:      true,
+	}, &kubeletdevicepluginv1beta1.Mount{
+		ContainerPath: "/sys/kernel/debug",
+		HostPath:      "/sys/kernel/debug",
+		ReadOnly:      true, // 根据需要设置为true或false
 	})
 	klog.Infoln("response=", responses)
 	util.PodAllocationTrySuccess(nodename, util.HygonDCUDevice, NodeLockDCU, current)
